@@ -287,7 +287,7 @@ The autograder is designed to test your simulator (loosely-)based on real hardwa
 
 In the autograder we will be using four benchmarks, all different from those provided to you. One will be a full program trace, while the other three are 20M-reference-long phase traces. The four traces will be simulated on each one of the 5 test cases described above.
 
-**Note:** Running all the test cases in gradescope takes about 5 minutes (for our implementation). Be patient when you submit code. Also, try to write somewhat efficient code because gradescope has a 20-minute limit on execution time.
+**Note:** Running all the test cases in gradescope takes about 8-10 minutes (for our implementation). Be patient when you submit code. Also, try to write somewhat efficient code because gradescope has a 20-minute limit on execution time.
 
 **Grading Breakdown:**
 * The project's maximum grade is 100. 
