@@ -1,0 +1,21 @@
+Student Name:   SOLUTION
+Student ID:     PID
+Student email:  EMAIL
+Simulator Memory Hierarchy:
+  L2$ Configuration:
+    Size:  1.00 KB
+    Sets:  8
+    Assoc: 1
+    Lat:   50 Cycles
+    Inclusive: No
+  Block Size: 128 Bytes
+  Memspeed:   100 Cycles
+Cache Statistics:
+  total L2-cache accesses:  150035173
+  total L2-cache misses:      6385637
+  total L2-cache penalties: 638563700
+  L2-cache miss rate:               4.26%
+  avg L2-cache access time:        54.26 cycles
+Total Memory accesses:  150035173
+Total Memory penalties: 8140322350
+avg Memory access time:         54.26 cycles
