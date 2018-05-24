@@ -134,7 +134,7 @@ a compressed trace then you can do so by doing the following:
   
 `bunzip2 -kc trace.bz2 | ./cache <options>`
 
-In either case the <options> that can be used to change the configurations of
+In either case the options that can be used to change the configurations of
 the memory hierarchy are as follows:
 
 ```
