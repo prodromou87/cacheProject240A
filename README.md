@@ -3,7 +3,6 @@
 ## Table of Contents
   * [Introduction](#introduction)
   * [Code Integrity](#code-integrity)
-  * [Bug Bounty Program](#bug-bounty-program)
   * [Get started](#get-started)
   * [Working with Docker](#working-with-docker)
   * [Traces](#traces)
@@ -35,23 +34,17 @@ command-line switches as well as the reading in of the trace files.  You will
 implement the cache simulator by completing all of the TODOs in the cache.c
 file.
 
-## Code Integrity
+## Academic Integrity
 
 Please make sure you do not copy a single line of code from any source.  Not from other students, not from the web, not from anywhere.  We have very sophisticated tools to discover if you did.  This is a graduate class and we have the very highest expectations for integrity.  You should expect that if you do so, even in very small amounts, you will be caught and this might result in you leaving the program.
 
-## Bug Bounty Program
-
-For this project, we will be using a newly-developed autograder. We tested it thoroughly, however, there's always a chance we missed some bugs. We offer a bug bounty program to help us quickly find and fix missed bugs.
-
-If you find, document, and share a valid bug (a bug we can reproduce based on you documented instructions and/or code), you will receive 2-10 bonus points per bug, depending on its severity (Since the max project points are 100, each bug you find is a 2-10% bonus). Typos and inaccuracies in this writeup do not count as bugs - but please share them with the class anyway.
-
-Bugs must be shared with the teaching stuff only, since you might have to share your implementation details. Once we validate and fix the bug it will be announced to the class along with the finder's name and the bonus points provided.
-
 ## Get Started
 
-As mentioned, we provide a starting framework to help you design your caches. The source code (including some traces for testing) is in github and you can get it with `git clone https://github.com/prodromou87/TBD.git`.
+As mentioned, we provide a starting framework to help you design your caches. The source code, traces, and expected output is in our github repo. You can get it with `git clone https://github.com/prodromou87/cacheProject240A.git`.
 
-Alternatively, you can download it from [our github page](https://github.com/prodromou87/TBD.git).
+Alternatively, you can download it from [our github page](https://github.com/prodromou87/cacheProject240A.git).
+
+For this project we decided to provide the correct output for the two benchmarks you are given, so you can verify your results. They can be found under the `correctOutput` directory.
 
 You have the option to write your project in C, C++ or Python. We only provide a framework written in C and we strongly recommend you use it, primarily to ensure compatibility with our autograder. 
 
@@ -246,9 +239,7 @@ This means that the access time that your cache access functions will return wil
 
 All grading will be done with respect to your simulator's cache statistics over
 a wide range of input parameters. This means that you should make sure
-that your simulator works for the various corner cases that exist. We will use three benchmarks for testing, none of which is provided to you. 
-
-To facilitate testing of your code with the benchmarks you have, we provide the necessary output files and scripts to run a trivial autograder locally (described later).
+that your simulator works for the various corner cases that exist. We will use four benchmarks for testing, none of which is provided in the github repo. 
 
 You should do most of the development on your own machine. If you face any issues when you submit your project in gradescope, try to run your project in our Docker image to ensure compatibility with the autograder, or post the error message in Piazza.
 
@@ -256,7 +247,7 @@ You should do most of the development on your own machine. If you face any issue
 
 The autograder is designed to test your simulator (loosely-)based on real hardware. We list the hardware we will simulate, along with their technical reference manuals wherever applicable.
 
-**NOTE:** Reference manuals are a wealth of information. They usually describe the architecture in extreme detail, provide diagrams and illustrations, electrical details, interface details and a lot more. However, they are much harder to read and understand that research papers. For those of you interested to learn how real processors are designed, this is the place to find everything you need.
+**NOTE:** Reference manuals are a wealth of information. They usually describe the architecture in extreme detail, provide diagrams and illustrations, electrical details, interface details and a lot more. However, they are much harder to read and understand than research papers, because their target audience is expected to have expert-level understanding of the subjects described. For those of you interested to learn how real processors are designed, this is the place to find everything you need.
 
 1. **Intel Pentium III** - [Reference Manual](http://download.intel.com/design/PentiumIII/datashts/24526408.pdf): 
    * I$: 16KB, direct-mapped, 2 cycles hit latency
@@ -296,15 +287,16 @@ The autograder is designed to test your simulator (loosely-)based on real hardwa
 
 In the autograder we will be using four benchmarks, all different from those provided to you. One will be a full program trace, while the other three are 20M-reference-long phase traces. The four traces will be simulated on each one of the 5 test cases described above.
 
+**Note:** Running all the test cases in gradescope takes about 5 minutes (for our implementation). Be patient when you submit code. Also, try to write somewhat efficient code because gradescope has a 20-minute limit on execution time.
+
 **Grading Breakdown:**
 * The project's maximum grade is 100. 
-* The actual autograder code will be provided. Feel free to read the code for details on our grading strategy.
 * Each of the above 5 machines (test cases) has a 20% weight on the final grade. In other words, if only the Alpha cache is correct (and the others get 0 points), your project score will be 20/100.
 * For each test case (Intel, Arm, MIPS, Alpha, BTCMiner):
   - The autograder runs the 4 benchmarks described earlier. Each benchmark has equal weight.
   - Each test case can receive a total of 100 points (later combined to generate final grade)
   - First, we perform the same compatibility tests as we did for the branch prediction project. Then, we measure the total number of memory references reported. If it's not correct, the entire test case fails and you receive 0 points. No points provided if you pass this test
-  - Once you pass the three compatibility tests, we will collect the number of accesses, number of misses, and number of penalty cycles for each cache in the test case. We also collect the average memory access time reported (total of 4 test fields). We then compare your answers against our implementation. Each test field has a 25% weight within the current test case. Based on how far your answer is from the correct one you get partial credit.
+  - Once you pass the three compatibility tests, we will collect the number of accesses, number of misses, and number of penalty cycles for each cache in the test case. We also collect the average memory access time reported (total of 4 test fields for each test case). We then compare your answers against our implementation. Each test field has a 25% weight within the current test case. Based on how far your answer is from the correct one you get partial credit, similarly to the branch prediction project.
 
 ## Turn-in instructions
 
